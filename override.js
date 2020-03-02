@@ -1,46 +1,39 @@
-
-function checkEdit() {
-
-  let tweetEdit = document.querySelector('[aria-label="Tweet text"]');
-  if (!tweetEdit) {
-    return;
-  }
-  tweetEdit = getLastChild(tweetEdit);
-
-  let charCount = tweetEdit.textContent.length;
-
-  let charDisplay = document.getElementById('charCount');
-
-  let tweetToolbar = document.querySelector('[data-testid="toolBar"]');
-  tweetToolbar = tweetToolbar.children[0];
-
-  if (charDisplay && tweetToolbar.contains(charDisplay)) {
-    charDisplay.innerText = ''+ (280-charCount);
-  } else {
-    tweetToolbar.append(createElement(charCount));
-  }
+function editHeader() {
+  let a = document.querySelector('[aria-label="Global"]');
+  a.append(createElement());
 }
 
-function createElement(chars) {
-  let elem = document.createElement("DIV");
+function getUsername() {
+  let b = document.querySelector('[aria-label="View profile and more"]');
+  return b.children[0].alt.slice(1);
+}
+
+function createElement() {
+  let href = '/'+getUsername()+'?tab=repositories';
+  let elem = document.createElement("A");
   elem.id = 'charCount';
-  elem.classList.add('css-901oao');
-  elem.classList.add('r-111h2gw');
-  elem.classList.add('r-n6v787');
-  elem.classList.add('r-19jlu03');
-  elem.classList.add('r-285fr0');
-  elem.classList.add('r-q4m81j');
-  let remChars = 280 - chars;
-  elem.appendChild(document.createTextNode(''+remChars));
+  elem.href=href;
+  elem.setAttribute('aria-label', 'Your repositories');
+  elem.setAttribute('data-hotkey', 'g r');
+  elem.setAttribute('data-ga-click', 'Header, click, Nav menu - item:repos context:user');
+  elem.setAttribute('data-selected-links', href);
+  let classes = [
+    'js-selected-navigation-item',
+    'Header-link',
+    'mr-0',
+    'mr-lg-3',
+    'py-2',
+    'py-lg-0',
+    'border-top',
+    'border-lg-top-0',
+    'border-white-fade-15'
+  ];
+  for (let i in classes) {
+    elem.classList.add(classes[i]);
+  }
+  elem.appendChild(document.createTextNode('Repositories'));
   return elem;
 }
 
-function getLastChild(a) {
-  let b = a;
-  while (b.children.length !== 0) {
-    b = b.children[0];
-  }
-  return b;
-}
-
-setInterval(checkEdit, 10);
+// setTimeout(editHeader, 10);
+editHeader();

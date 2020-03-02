@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "GitHub Repo Shortcut",
-  "version": "1.2.2",
+  "version": "1.2.5",
 
   "description": "Faster access to your repos!",
   "short_name": "Repo Shortcut",
