@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-'use strict';
-
 let changeColor = document.getElementById('changeColor');
 
 chrome.storage.sync.get('color', function(data) {
@@ -13,9 +11,6 @@ chrome.storage.sync.get('color', function(data) {
 
 changeColor.onclick = function(element) {
   let color = element.target.value;
-  let target = document.getElementById('topnav');
-
-  console.log(target);
 
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
