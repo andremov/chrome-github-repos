@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Getting Started Example",
-  "version": "1.2.1010",
+  "name": "GitHub Repo Shortcut",
+  "version": "1.2.2",
 
-  "description": "Build an Extension!",
-  "short_name": "Tweet Characters",
+  "description": "Faster access to your repos!",
+  "short_name": "Repo Shortcut",
   "permissions": ["activeTab", "declarativeContent", "tabs"],
 
   "content_scripts": [
