@@ -1,6 +1,6 @@
 function editHeader() {
   let a = document.querySelector('[aria-label="Global"]');
-  a.append(createElement());
+  a.insertBefore(createElement(), a.children[1]);
 }
 
 function getUsername() {
