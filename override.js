@@ -5,7 +5,7 @@ function editHeader() {
 
 function getUsername() {
   let b = document.querySelector('[aria-label="View profile and more"]');
-  return b.children[0].alt.slice(1);
+  return b?.children[0].alt.slice(1);
 }
 
 function createElement() {
@@ -35,5 +35,7 @@ function createElement() {
   return elem;
 }
 
-// setTimeout(editHeader, 10);
-editHeader();
+if (getUsername()) {
+  // setTimeout(editHeader, 10);
+  editHeader();
+}

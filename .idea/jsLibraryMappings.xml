@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@types/append-query, @types/chrome, @types/node, @types/page}" />
-    <includedPredefinedLibrary name="Node.js Core" />
-  </component>
-</project>
